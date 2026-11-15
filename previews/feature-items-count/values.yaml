@@ -1,0 +1,26 @@
+apiVersion: badil.dev/v1
+services:
+  - name: backend-1
+    repoURL: https://github.com/badilhq/demo-backend-1.git
+    branch: main
+    commitSha: c02d520535e6fc3de7ce654129e1af08c4fb2f92
+    host: backend-1-feature-items-count.127.0.0.1.nip.io
+    metadata:
+      pr-author: amine7536
+      pr-url: https://github.com/badilhq/demo-backend-1/pull/34
+      pr-number: "34"
+      created-at: "2026-11-15T10:09:17Z"
+      updated-at: "2026-11-15T10:09:17Z"
+      vcs.ref.name: feature/items-count
+      cicd.pipeline.run.url: ""
+  - name: backend-2
+    repoURL: https://github.com/badilhq/demo-backend-2.git
+    branch: main
+    host: backend-2-feature-items-count.127.0.0.1.nip.io
+  - name: front
+    repoURL: https://github.com/badilhq/demo-front.git
+    branch: main
+    host: front-feature-items-count.127.0.0.1.nip.io
+  - name: postgres
+    repoURL: https://github.com/badilhq/demo-postgres.git
+    branch: main
