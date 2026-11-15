@@ -3,7 +3,6 @@ services:
     repo: "https://github.com/badilhq/demo-backend-1.git"
   backend-2:
     repo: "https://github.com/badilhq/demo-backend-2.git"
-    branch: preview-sync-test
   front:
     repo: "https://github.com/badilhq/demo-front.git"
   postgres:
