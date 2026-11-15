@@ -14,4 +14,3 @@ preview:
   expose:
     front: {}
     backend-1: {}
-    backend-2: {}
