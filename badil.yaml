@@ -16,7 +16,8 @@ namespace:
 
 dependencies:
   podinfo:
-    chart: oci://
+    repo: https://
+    chart: podinfo
     version: 6.17.0
     values:
       ui:
