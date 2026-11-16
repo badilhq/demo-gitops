@@ -12,7 +12,7 @@ services:
 
 namespace:
   labels:
-    badil-test: sweep
+    badil-test: push
 
 dependencies:
   podinfo:
