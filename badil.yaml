@@ -1,6 +1,4 @@
 services:
-  1:
-    repo: "https://github.com/badilhq/demo-backend-2.git"
   backend-1:
     repo: "https://github.com/badilhq/demo-backend-1.git"
     needs: [postgres, podinfo]
