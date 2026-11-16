@@ -22,6 +22,33 @@ services:
       updated-at: "2026-11-16T15:21:04Z"
       vcs.ref.name: feature/items-count
       cicd.pipeline.run.url: ""
+  - name: backend-2
+    repoURL: https://github.com/badilhq/demo-backend-2.git
+    branch: main
+    imageTag: ${ARGOCD_APP_REVISION}
+    chart:
+      path: k8s/
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+    host: backend-2-feature-items-count.127.0.0.1.nip.io
+  - name: front
+    repoURL: https://github.com/badilhq/demo-front.git
+    branch: main
+    commitSha: c294c95c9468691b3105da6c4bebc7471625837b
+    imageTag: c294c95c9468691b3105da6c4bebc7471625837b
+    chart:
+      path: k8s/
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+    host: front-feature-items-count.127.0.0.1.nip.io
+    metadata:
+      pr-author: amine7536
+      pr-url: https://github.com/badilhq/demo-front/pull/12
+      pr-number: "12"
+      created-at: "2026-11-16T15:28:15Z"
+      updated-at: "2026-11-16T15:28:15Z"
+      vcs.ref.name: feature/items-count
+      cicd.pipeline.run.url: ""
   - name: postgres
     repoURL: https://github.com/badilhq/demo-postgres.git
     branch: main
