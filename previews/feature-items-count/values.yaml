@@ -19,24 +19,6 @@ services:
       updated-at: "2026-11-16T13:01:14Z"
       vcs.ref.name: feature/items-count
       cicd.pipeline.run.url: ""
-  - name: front
-    repoURL: https://github.com/badilhq/demo-front.git
-    branch: main
-    commitSha: 5e1a6856f6426009c876d77897e878517c093fcc
-    imageTag: 5e1a6856f6426009c876d77897e878517c093fcc
-    chart:
-      path: k8s/
-      imageTagParam: app.image.tag
-      hostParam: app.ingress.host
-    host: front-feature-items-count.127.0.0.1.nip.io
-    metadata:
-      pr-author: amine7536
-      pr-url: https://github.com/badilhq/demo-front/pull/11
-      pr-number: "11"
-      created-at: "2026-11-16T13:05:45Z"
-      updated-at: "2026-11-16T13:05:45Z"
-      vcs.ref.name: feature/items-count
-      cicd.pipeline.run.url: ""
   - name: postgres
     repoURL: https://github.com/badilhq/demo-postgres.git
     branch: main
