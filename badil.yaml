@@ -1,12 +1,32 @@
+imageTag: "sha-{sha7}"
+
 services:
   backend-1:
     repo: "https://github.com/badilhq/demo-backend-1.git"
+    imageTag: "sha-{sha7}"
+    chart:
+      path: deploy/helm
+      imageTagParam: svc.image.tag
+      hostParam: svc.ingress.host
+      valueFiles: [values-preview.yaml]
   backend-2:
     repo: "https://github.com/badilhq/demo-backend-2.git"
   front:
     repo: "https://github.com/badilhq/demo-front.git"
   postgres:
     repo: "https://github.com/badilhq/demo-postgres.git"
+
+dependencies:
+  podinfo:
+    chart: oci://ghcr.io/stefanprodan/charts/podinfo
+    version: 6.17.0
+    valueFiles: [deps/podinfo.yaml]
+  mailpit:
+    repo: https://jouve.github.io/charts
+    chart: mailpit
+    version: 0.39.0
+    values: {ingress: {enabled: true}}
+    hostParam: ingress.hostname
 
 preview:
   domain: 127.0.0.1.nip.io
@@ -15,3 +35,4 @@ preview:
     front: {}
     backend-1: {}
     backend-2: {}
+    mailpit: {}
