@@ -16,7 +16,7 @@ namespace:
 
 dependencies:
   podinfo:
-    chart: oci://ghcr.io/stefanprodan/charts/podinfo
+    chart: oci://
     version: 6.17.0
     values:
       ui:
