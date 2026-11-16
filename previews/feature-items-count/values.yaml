@@ -1,0 +1,67 @@
+apiVersion: badil.dev/v1beta1
+gitopsRepoURL: https://github.com/badilhq/demo-gitops.git
+services:
+  - name: backend-1
+    repoURL: https://github.com/badilhq/demo-backend-1.git
+    branch: main
+    commitSha: cbb2f01ef6b5f5ebb6fda777486f6ace55c88172
+    imageTag: cbb2f01ef6b5f5ebb6fda777486f6ace55c88172
+    chart:
+      path: k8s/
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+    host: backend-1-feature-items-count.127.0.0.1.nip.io
+    metadata:
+      pr-author: amine7536
+      pr-url: https://github.com/badilhq/demo-backend-1/pull/37
+      pr-number: "37"
+      created-at: "2026-11-16T12:36:07Z"
+      updated-at: "2026-11-16T12:36:07Z"
+      vcs.ref.name: feature/items-count
+      cicd.pipeline.run.url: ""
+  - name: backend-2
+    repoURL: https://github.com/badilhq/demo-backend-2.git
+    branch: main
+    imageTag: ${ARGOCD_APP_REVISION}
+    chart:
+      path: k8s/
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+    host: backend-2-feature-items-count.127.0.0.1.nip.io
+  - name: front
+    repoURL: https://github.com/badilhq/demo-front.git
+    branch: main
+    imageTag: ${ARGOCD_APP_REVISION}
+    chart:
+      path: k8s/
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+    host: front-feature-items-count.127.0.0.1.nip.io
+  - name: postgres
+    repoURL: https://github.com/badilhq/demo-postgres.git
+    branch: main
+    imageTag: ${ARGOCD_APP_REVISION}
+    chart:
+      path: k8s/
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+dependencies:
+  - name: podinfo
+    chart:
+      repoURL: oci://ghcr.io/stefanprodan/charts/podinfo
+      version: 6.17.0
+    values:
+      ui:
+        message: from-inline-values
+    valueFiles:
+      - deps/podinfo.yaml
+  - name: mailpit
+    chart:
+      repoURL: https://jouve.github.io/charts
+      name: mailpit
+      version: 0.39.0
+    values:
+      ingress:
+        enabled: true
+    hostParam: ingress.hostname
+    host: mailpit-feature-items-count.127.0.0.1.nip.io
