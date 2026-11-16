@@ -1,0 +1,4 @@
+replicaCount: 2
+ui:
+  color: "#d9480f"
+  message: from-value-file

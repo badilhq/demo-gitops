@@ -8,6 +8,24 @@ services:
   postgres:
     repo: "https://github.com/badilhq/demo-postgres.git"
 
+dependencies:
+  podinfo:
+    chart: oci://ghcr.io/stefanprodan/charts/podinfo
+    version: 6.17.0
+    values:
+      ui:
+        message: from-inline-values
+    valueFiles:
+      - deps/podinfo.yaml
+  mailpit:
+    repo: https://jouve.github.io/charts
+    chart: mailpit
+    version: 0.39.0
+    values:
+      ingress:
+        enabled: true
+    hostParam: ingress.hostname
+
 preview:
   domain: 127.0.0.1.nip.io
   tls: false
@@ -15,3 +33,4 @@ preview:
     front: {}
     backend-1: {}
     backend-2: {}
+    mailpit: {}
