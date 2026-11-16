@@ -1,14 +1,27 @@
 services:
   backend-1:
     repo: "https://github.com/badilhq/demo-backend-1.git"
+    needs: [postgres, podinfo]
   backend-2:
     repo: "https://github.com/badilhq/demo-backend-2.git"
   front:
     repo: "https://github.com/badilhq/demo-front.git"
+    needs: [backend-1, backend-2]
   postgres:
     repo: "https://github.com/badilhq/demo-postgres.git"
 
+dependencies:
+  podinfo:
+    chart: oci://ghcr.io/stefanprodan/charts/podinfo
+    version: 6.17.0
+    values:
+      ui:
+        message: from-inline-values
+    valueFiles:
+      - deps/podinfo.yaml
+
 preview:
+  argocdURL: http://argocd.127.0.0.1.nip.io
   domain: 127.0.0.1.nip.io
   tls: false
   expose:
