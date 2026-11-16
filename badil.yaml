@@ -1,12 +1,10 @@
 services:
   backend-1:
     repo: "https://github.com/badilhq/demo-backend-1.git"
-    needs: [postgres]
   backend-2:
     repo: "https://github.com/badilhq/demo-backend-2.git"
   front:
     repo: "https://github.com/badilhq/demo-front.git"
-    needs: [backend-1]
   postgres:
     repo: "https://github.com/badilhq/demo-postgres.git"
 
