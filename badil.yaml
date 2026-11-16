@@ -9,14 +9,6 @@ services:
     repo: "https://github.com/badilhq/demo-postgres.git"
 
 dependencies:
-  podinfo:
-    chart: oci://ghcr.io/stefanprodan/charts/podinfo
-    version: 6.17.0
-    values:
-      ui:
-        message: from-inline-values
-    valueFiles:
-      - deps/podinfo.yaml
   mailpit:
     repo: https://jouve.github.io/charts
     chart: mailpit
