@@ -1,4 +1,7 @@
 imageTag: "{sha}"
+namespace:
+  labels:
+    badil-test: "yes"
 services:
   backend-1:
     repo: "https://github.com/badilhq/demo-backend-1.git"
