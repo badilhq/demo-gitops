@@ -1,0 +1,57 @@
+apiVersion: badil.dev/v1beta1
+gitopsRepoURL: https://github.com/badilhq/demo-gitops.git
+services:
+  - name: backend-1
+    repoURL: https://github.com/badilhq/demo-backend-1.git
+    branch: main
+    commitSha: 5212e3d463d9cfd2c81a4ef4dfacb41cbbe439f0
+    imageTag: 5212e3d463d9cfd2c81a4ef4dfacb41cbbe439f0
+    chart:
+      path: k8s/
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+    host: backend-1-feature-pf-go.127.0.0.1.nip.io
+    metadata:
+      pr-author: amine7536
+      pr-url: https://github.com/badilhq/demo-backend-1/pull/43
+      pr-number: "43"
+      created-at: "2026-11-16T21:51:23Z"
+      updated-at: "2026-11-16T21:51:23Z"
+      vcs.ref.name: feature/pf-go
+      cicd.pipeline.run.url: ""
+  - name: backend-1-chart
+    repoURL: https://github.com/badilhq/demo-backend-1.git
+    branch: main
+    imageTag: ${ARGOCD_APP_REVISION}
+    chart:
+      path: k8s/
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+    host: backend-1-chart-feature-pf-go.127.0.0.1.nip.io
+  - name: backend-2
+    repoURL: https://github.com/badilhq/demo-backend-2.git
+    branch: main
+    imageTag: ${ARGOCD_APP_REVISION}
+    chart:
+      path: k8s/
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+    host: backend-2-feature-pf-go.127.0.0.1.nip.io
+  - name: front
+    repoURL: https://github.com/badilhq/demo-front.git
+    branch: main
+    imageTag: ${ARGOCD_APP_REVISION}
+    chart:
+      path: k8s/
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+    host: front-feature-pf-go.127.0.0.1.nip.io
+  - name: postgres
+    repoURL: https://github.com/badilhq/demo-postgres.git
+    branch: main
+    imageTag: ${ARGOCD_APP_REVISION}
+    chart:
+      path: k8s/
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+dependencies: []
