@@ -46,15 +46,6 @@ services:
       imageTagParam: app.image.tag
       hostParam: app.ingress.host
 dependencies:
-  - name: podinfo
-    chart:
-      repoURL: oci://ghcr.io/stefanprodan/charts/podinfo
-      version: 6.17.0
-    values:
-      ui:
-        message: from-inline-values
-    valueFiles:
-      - deps/podinfo.yaml
   - name: mailpit
     chart:
       repoURL: https://jouve.github.io/charts
