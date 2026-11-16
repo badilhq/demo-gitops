@@ -1,4 +1,7 @@
 apiVersion: badil.dev/v1beta1
+namespace:
+  labels:
+    badil-test: "yes"
 services:
   - name: backend-1
     repoURL: https://github.com/badilhq/demo-backend-1.git
