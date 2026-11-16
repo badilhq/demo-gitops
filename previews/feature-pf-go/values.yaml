@@ -4,8 +4,8 @@ services:
   - name: backend-1
     repoURL: https://github.com/badilhq/demo-backend-1.git
     branch: main
-    commitSha: 5212e3d463d9cfd2c81a4ef4dfacb41cbbe439f0
-    imageTag: 5212e3d463d9cfd2c81a4ef4dfacb41cbbe439f0
+    commitSha: 4d14f8e8e697134b0d6e079530dd7b732d19919b
+    imageTag: 4d14f8e8e697134b0d6e079530dd7b732d19919b
     chart:
       path: k8s/
       imageTagParam: app.image.tag
@@ -16,7 +16,7 @@ services:
       pr-url: https://github.com/badilhq/demo-backend-1/pull/43
       pr-number: "43"
       created-at: "2026-11-16T21:51:23Z"
-      updated-at: "2026-11-16T21:51:23Z"
+      updated-at: "2026-11-16T21:55:56Z"
       vcs.ref.name: feature/pf-go
       cicd.pipeline.run.url: ""
   - name: backend-1-chart
