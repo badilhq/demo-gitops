@@ -15,3 +15,7 @@ preview:
     front: {}
     backend-1: {}
     backend-2: {}
+
+namespace:
+  labels:
+    badil-push-test: "yes"
