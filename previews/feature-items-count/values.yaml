@@ -1,5 +1,8 @@
 apiVersion: badil.dev/v1beta1
 gitopsRepoURL: https://github.com/badilhq/demo-gitops.git
+namespace:
+  labels:
+    badil-test: sweep
 services:
   - name: backend-1
     repoURL: https://github.com/badilhq/demo-backend-1.git
