@@ -22,12 +22,21 @@ services:
   - name: backend-1-chart
     repoURL: https://github.com/badilhq/demo-backend-1.git
     branch: main
-    imageTag: ${ARGOCD_APP_REVISION}
+    commitSha: 4d14f8e8e697134b0d6e079530dd7b732d19919b
+    imageTag: 4d14f8e8e697134b0d6e079530dd7b732d19919b
     chart:
       path: k8s/
       imageTagParam: app.image.tag
       hostParam: app.ingress.host
     host: backend-1-chart-feature-pf-go.127.0.0.1.nip.io
+    metadata:
+      pr-author: amine7536
+      pr-url: https://github.com/badilhq/demo-backend-1/pull/43
+      pr-number: "43"
+      created-at: "2026-11-16T21:55:56Z"
+      updated-at: "2026-11-16T21:55:56Z"
+      vcs.ref.name: feature/pf-go
+      cicd.pipeline.run.url: ""
   - name: backend-2
     repoURL: https://github.com/badilhq/demo-backend-2.git
     branch: main
