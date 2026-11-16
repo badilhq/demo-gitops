@@ -1,0 +1,46 @@
+apiVersion: badil.dev/v1beta1
+services:
+  - name: backend-1
+    repoURL: https://github.com/badilhq/demo-backend-1.git
+    branch: main
+    commitSha: 2a11d2e908f68abeff3a1ccc242f0a778ec454b2
+    imageTag: 2a11d2e908f68abeff3a1ccc242f0a778ec454b2
+    chart:
+      path: k8s/
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+    host: backend-1-feature-items-count.127.0.0.1.nip.io
+    metadata:
+      pr-author: amine7536
+      pr-url: https://github.com/badilhq/demo-backend-1/pull/36
+      pr-number: "36"
+      created-at: "2026-11-16T11:46:34Z"
+      updated-at: "2026-11-16T11:46:34Z"
+      vcs.ref.name: feature/items-count
+      cicd.pipeline.run.url: ""
+  - name: backend-2
+    repoURL: https://github.com/badilhq/demo-backend-2.git
+    branch: main
+    imageTag: ${ARGOCD_APP_REVISION}
+    chart:
+      path: k8s/
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+    host: backend-2-feature-items-count.127.0.0.1.nip.io
+  - name: front
+    repoURL: https://github.com/badilhq/demo-front.git
+    branch: main
+    imageTag: ${ARGOCD_APP_REVISION}
+    chart:
+      path: k8s/
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+    host: front-feature-items-count.127.0.0.1.nip.io
+  - name: postgres
+    repoURL: https://github.com/badilhq/demo-postgres.git
+    branch: main
+    imageTag: ${ARGOCD_APP_REVISION}
+    chart:
+      path: k8s/
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
