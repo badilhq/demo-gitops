@@ -33,12 +33,21 @@ services:
   - name: front
     repoURL: https://github.com/badilhq/demo-front.git
     branch: main
-    imageTag: ${ARGOCD_APP_REVISION}
+    commitSha: a45face9b2413f6730c78408d2042fc148272282
+    imageTag: a45face9b2413f6730c78408d2042fc148272282
     chart:
       path: k8s/
       imageTagParam: app.image.tag
       hostParam: app.ingress.host
     host: front-feature-items-count.127.0.0.1.nip.io
+    metadata:
+      pr-author: amine7536
+      pr-url: https://github.com/badilhq/demo-front/pull/10
+      pr-number: "10"
+      created-at: "2026-11-16T11:54:47Z"
+      updated-at: "2026-11-16T11:54:47Z"
+      vcs.ref.name: feature/items-count
+      cicd.pipeline.run.url: ""
   - name: postgres
     repoURL: https://github.com/badilhq/demo-postgres.git
     branch: main
