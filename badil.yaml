@@ -10,6 +10,10 @@ services:
   postgres:
     repo: "https://github.com/badilhq/demo-postgres.git"
 
+namespace:
+  labels:
+    badil-test: sweep
+
 dependencies:
   podinfo:
     chart: oci://ghcr.io/stefanprodan/charts/podinfo
