@@ -39,12 +39,21 @@ services:
   - name: mono-api
     repoURL: https://github.com/badilhq/demo-monorepo.git
     branch: main
-    imageTag: ${ARGOCD_APP_REVISION}
+    commitSha: e06abce21d1a8b7ec60bb04438d20e2b63972b75
+    imageTag: e06abce21d1a8b7ec60bb04438d20e2b63972b75
     chart:
       path: api/chart
       imageTagParam: app.image.tag
       hostParam: app.ingress.host
     host: mono-api-feature-widen-narrow.127.0.0.1.nip.io
+    metadata:
+      pr-author: amine7536
+      pr-url: https://github.com/badilhq/demo-monorepo/pull/4
+      pr-number: "4"
+      created-at: "2026-11-17T20:08:23Z"
+      updated-at: "2026-11-17T20:08:23Z"
+      vcs.ref.name: feature/widen-narrow
+      cicd.pipeline.run.url: ""
   - name: mono-web
     repoURL: https://github.com/badilhq/demo-monorepo.git
     branch: main
