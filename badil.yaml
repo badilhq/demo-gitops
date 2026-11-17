@@ -1,10 +1,6 @@
 services:
   backend-1:
     repo: "https://github.com/badilhq/demo-backend-1.git"
-    paths: ["**/*.go", "go.mod", "go.sum"]
-  backend-1-chart:
-    repo: "https://github.com/badilhq/demo-backend-1.git"
-    paths: ["k8s/**"]
   backend-2:
     repo: "https://github.com/badilhq/demo-backend-2.git"
   front:
@@ -18,5 +14,4 @@ preview:
   expose:
     front: {}
     backend-1: {}
-    backend-1-chart: {}
     backend-2: {}
