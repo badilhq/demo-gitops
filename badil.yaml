@@ -7,6 +7,16 @@ services:
     repo: "https://github.com/badilhq/demo-front.git"
   postgres:
     repo: "https://github.com/badilhq/demo-postgres.git"
+  mono-api:
+    repo: "https://github.com/badilhq/demo-monorepo.git"
+    chart:
+      path: api/chart
+    paths: ["api/**"]
+  mono-web:
+    repo: "https://github.com/badilhq/demo-monorepo.git"
+    chart:
+      path: web/chart
+    paths: ["web/**"]
 
 preview:
   domain: 127.0.0.1.nip.io
@@ -15,3 +25,5 @@ preview:
     front: {}
     backend-1: {}
     backend-2: {}
+    mono-api: {}
+    mono-web: {}
