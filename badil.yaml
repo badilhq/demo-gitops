@@ -16,7 +16,7 @@ services:
     repo: "https://github.com/badilhq/demo-monorepo.git"
     chart:
       path: web/chart
-    paths: ["./web/**"]
+    paths: ["web/**"]
 
 preview:
   domain: 127.0.0.1.nip.io
