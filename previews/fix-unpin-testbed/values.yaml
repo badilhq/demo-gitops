@@ -4,8 +4,8 @@ services:
   - name: backend-1
     repoURL: https://github.com/badilhq/demo-backend-1.git
     branch: main
-    commitSha: 064103de75aa394f4debb708ca2c8f7b32ce4a33
-    imageTag: 064103de75aa394f4debb708ca2c8f7b32ce4a33
+    commitSha: 9d7508be94b5f0f40c48a202ce11cd34a5cb67e7
+    imageTag: 9d7508be94b5f0f40c48a202ce11cd34a5cb67e7
     chart:
       path: k8s/
       imageTagParam: app.image.tag
@@ -16,7 +16,7 @@ services:
       pr-url: https://github.com/badilhq/demo-backend-1/pull/45
       pr-number: "45"
       created-at: "2026-11-17T03:58:29Z"
-      updated-at: "2026-11-17T03:58:29Z"
+      updated-at: "2026-11-17T04:01:38Z"
       vcs.ref.name: fix-unpin-testbed
       cicd.pipeline.run.url: ""
   - name: backend-1-chart
