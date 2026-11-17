@@ -57,8 +57,8 @@ services:
   - name: mono-web
     repoURL: https://github.com/badilhq/demo-monorepo.git
     branch: main
-    commitSha: 23b031ec0de4ef0398769d53fa512be4d2876a2c
-    imageTag: 23b031ec0de4ef0398769d53fa512be4d2876a2c
+    commitSha: e06abce21d1a8b7ec60bb04438d20e2b63972b75
+    imageTag: e06abce21d1a8b7ec60bb04438d20e2b63972b75
     chart:
       path: web/chart
       imageTagParam: app.image.tag
@@ -69,7 +69,7 @@ services:
       pr-url: https://github.com/badilhq/demo-monorepo/pull/4
       pr-number: "4"
       created-at: "2026-11-17T20:04:08Z"
-      updated-at: "2026-11-17T20:04:08Z"
+      updated-at: "2026-11-17T20:08:23Z"
       vcs.ref.name: feature/widen-narrow
       cicd.pipeline.run.url: ""
 dependencies: []
