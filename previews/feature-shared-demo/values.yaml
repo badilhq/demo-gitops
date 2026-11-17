@@ -40,12 +40,21 @@ services:
   - name: front
     repoURL: https://github.com/badilhq/demo-front.git
     branch: main
-    imageTag: ${ARGOCD_APP_REVISION}
+    commitSha: 0d74841cdbfbdba5a0e73295c23a22f55e47df73
+    imageTag: 0d74841cdbfbdba5a0e73295c23a22f55e47df73
     chart:
       path: k8s/
       imageTagParam: app.image.tag
       hostParam: app.ingress.host
     host: front-feature-shared-demo.127.0.0.1.nip.io
+    metadata:
+      pr-author: amine7536
+      pr-url: https://github.com/badilhq/demo-front/pull/13
+      pr-number: "13"
+      created-at: "2026-11-17T19:21:19Z"
+      updated-at: "2026-11-17T19:21:19Z"
+      vcs.ref.name: feature/shared-demo
+      cicd.pipeline.run.url: ""
   - name: postgres
     repoURL: https://github.com/badilhq/demo-postgres.git
     branch: main
