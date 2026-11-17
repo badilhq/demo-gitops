@@ -4,21 +4,12 @@ services:
   - name: backend-1
     repoURL: https://github.com/badilhq/demo-backend-1.git
     branch: main
-    commitSha: 85dccfc286d59d864b66ed4c66ff3aac1e7c7128
-    imageTag: 85dccfc286d59d864b66ed4c66ff3aac1e7c7128
+    imageTag: ${ARGOCD_APP_REVISION}
     chart:
       path: k8s/
       imageTagParam: app.image.tag
       hostParam: app.ingress.host
     host: backend-1-shared-unpin-testbed.127.0.0.1.nip.io
-    metadata:
-      pr-author: amine7536
-      pr-url: https://github.com/badilhq/demo-backend-1/pull/46
-      pr-number: "46"
-      created-at: "2026-11-17T04:12:03Z"
-      updated-at: "2026-11-17T04:12:03Z"
-      vcs.ref.name: shared-unpin-testbed
-      cicd.pipeline.run.url: ""
   - name: backend-1-chart
     repoURL: https://github.com/badilhq/demo-backend-1.git
     branch: main
