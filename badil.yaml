@@ -4,7 +4,7 @@ services:
     paths: ["**/*.go", "go.mod", "go.sum"]
   backend-1-chart:
     repo: "https://github.com/badilhq/demo-backend-1.git"
-    paths: ["k8s/["]
+    paths: []
   backend-2:
     repo: "https://github.com/badilhq/demo-backend-2.git"
   front:
