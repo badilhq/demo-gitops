@@ -45,4 +45,22 @@ services:
       path: k8s/
       imageTagParam: app.image.tag
       hostParam: app.ingress.host
+  - name: mono-api
+    repoURL: https://github.com/badilhq/demo-monorepo.git
+    branch: main
+    imageTag: ${ARGOCD_APP_REVISION}
+    chart:
+      path: api/chart
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+    host: mono-api-feature-items-count.127.0.0.1.nip.io
+  - name: mono-web
+    repoURL: https://github.com/badilhq/demo-monorepo.git
+    branch: main
+    imageTag: ${ARGOCD_APP_REVISION}
+    chart:
+      path: web/chart
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+    host: mono-web-feature-items-count.127.0.0.1.nip.io
 dependencies: []
