@@ -48,8 +48,8 @@ services:
   - name: mono-web
     repoURL: https://github.com/badilhq/demo-monorepo.git
     branch: main
-    commitSha: c5e69a8a2f984f72aef067dc79e7117300d085a7
-    imageTag: c5e69a8a2f984f72aef067dc79e7117300d085a7
+    commitSha: d24d5d13ccf2e908236c77913ee5cb5cba70e4c4
+    imageTag: d24d5d13ccf2e908236c77913ee5cb5cba70e4c4
     chart:
       path: web/chart
       imageTagParam: app.image.tag
@@ -60,7 +60,7 @@ services:
       pr-url: https://github.com/badilhq/demo-monorepo/pull/6
       pr-number: "6"
       created-at: "2026-11-20T15:27:24Z"
-      updated-at: "2026-11-20T15:27:24Z"
+      updated-at: "2026-11-20T15:37:39Z"
       vcs.ref.name: agent/wait
       cicd.pipeline.run.url: ""
 dependencies: []
