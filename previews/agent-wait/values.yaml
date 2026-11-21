@@ -1,0 +1,66 @@
+apiVersion: badil.dev/v1beta1
+gitopsRepoURL: https://github.com/badilhq/demo-gitops.git
+services:
+  - name: backend-1
+    repoURL: https://github.com/badilhq/demo-backend-1.git
+    branch: main
+    imageTag: ${ARGOCD_APP_REVISION}
+    chart:
+      path: k8s/
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+    host: backend-1-agent-wait.127.0.0.1.nip.io
+  - name: backend-2
+    repoURL: https://github.com/badilhq/demo-backend-2.git
+    branch: main
+    imageTag: ${ARGOCD_APP_REVISION}
+    chart:
+      path: k8s/
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+    host: backend-2-agent-wait.127.0.0.1.nip.io
+  - name: front
+    repoURL: https://github.com/badilhq/demo-front.git
+    branch: main
+    imageTag: ${ARGOCD_APP_REVISION}
+    chart:
+      path: k8s/
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+    host: front-agent-wait.127.0.0.1.nip.io
+  - name: postgres
+    repoURL: https://github.com/badilhq/demo-postgres.git
+    branch: main
+    imageTag: ${ARGOCD_APP_REVISION}
+    chart:
+      path: k8s/
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+  - name: mono-api
+    repoURL: https://github.com/badilhq/demo-monorepo.git
+    branch: main
+    imageTag: ${ARGOCD_APP_REVISION}
+    chart:
+      path: api/chart
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+    host: mono-api-agent-wait.127.0.0.1.nip.io
+  - name: mono-web
+    repoURL: https://github.com/badilhq/demo-monorepo.git
+    branch: main
+    commitSha: 4de954301bf3db68399779b7128f1c51ea98d5b2
+    imageTag: 4de954301bf3db68399779b7128f1c51ea98d5b2
+    chart:
+      path: web/chart
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+    host: mono-web-agent-wait.127.0.0.1.nip.io
+    metadata:
+      pr-author: amine7536
+      pr-url: https://github.com/badilhq/demo-monorepo/pull/12
+      pr-number: "12"
+      created-at: "2026-11-21T17:37:58Z"
+      updated-at: "2026-11-21T17:37:58Z"
+      vcs.ref.name: agent/wait
+      cicd.pipeline.run.url: ""
+dependencies: []
