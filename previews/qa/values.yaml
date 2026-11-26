@@ -10,13 +10,13 @@ services:
       path: k8s/
       imageTagParam: app.image.tag
       hostParam: app.ingress.host
-    host: backend-1-e2e-named-wins-20261126001900-nw.127.0.0.1.nip.io
+    host: backend-1-qa.127.0.0.1.nip.io
     metadata:
       pr-author: amine7536
       pr-url: https://github.com/badilhq/demo-backend-1/pull/99
       pr-number: "99"
-      created-at: "2026-11-26T01:06:25Z"
-      updated-at: "2026-11-26T01:06:25Z"
+      created-at: "2026-11-26T01:06:30Z"
+      updated-at: "2026-11-26T01:06:30Z"
       vcs.ref.name: e2e/named-wins-20261126001900-nw
       cicd.pipeline.run.url: ""
   - name: backend-2
@@ -27,7 +27,7 @@ services:
       path: k8s/
       imageTagParam: app.image.tag
       hostParam: app.ingress.host
-    host: backend-2-e2e-named-wins-20261126001900-nw.127.0.0.1.nip.io
+    host: backend-2-qa.127.0.0.1.nip.io
   - name: front
     repoURL: https://github.com/badilhq/demo-front.git
     branch: main
@@ -36,7 +36,7 @@ services:
       path: k8s/
       imageTagParam: app.image.tag
       hostParam: app.ingress.host
-    host: front-e2e-named-wins-20261126001900-nw.127.0.0.1.nip.io
+    host: front-qa.127.0.0.1.nip.io
   - name: postgres
     repoURL: https://github.com/badilhq/demo-postgres.git
     branch: main
@@ -53,7 +53,7 @@ services:
       path: api/chart
       imageTagParam: app.image.tag
       hostParam: app.ingress.host
-    host: mono-api-e2e-named-wins-20261126001900-nw.127.0.0.1.nip.io
+    host: mono-api-qa.127.0.0.1.nip.io
   - name: mono-web
     repoURL: https://github.com/badilhq/demo-monorepo.git
     branch: main
@@ -62,5 +62,5 @@ services:
       path: web/chart
       imageTagParam: app.image.tag
       hostParam: app.ingress.host
-    host: mono-web-e2e-named-wins-20261126001900-nw.127.0.0.1.nip.io
+    host: mono-web-qa.127.0.0.1.nip.io
 dependencies: []
