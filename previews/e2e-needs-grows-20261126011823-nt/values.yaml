@@ -19,6 +19,33 @@ services:
       updated-at: "2026-11-26T01:25:30Z"
       vcs.ref.name: e2e/needs-grows-20261126011823-nt
       cicd.pipeline.run.url: ""
+  - name: backend-2
+    repoURL: https://github.com/badilhq/demo-backend-2.git
+    branch: main
+    imageTag: ${ARGOCD_APP_REVISION}
+    chart:
+      path: k8s/
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+    host: backend-2-e2e-needs-grows-20261126011823-nt.127.0.0.1.nip.io
+  - name: front
+    repoURL: https://github.com/badilhq/demo-front.git
+    branch: main
+    commitSha: 06d122e01c839bbbe6cfcf9674b7b2a0d643d667
+    imageTag: 06d122e01c839bbbe6cfcf9674b7b2a0d643d667
+    chart:
+      path: k8s/
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+    host: front-e2e-needs-grows-20261126011823-nt.127.0.0.1.nip.io
+    metadata:
+      pr-author: amine7536
+      pr-url: https://github.com/badilhq/demo-front/pull/15
+      pr-number: "15"
+      created-at: "2026-11-26T01:25:44Z"
+      updated-at: "2026-11-26T01:25:44Z"
+      vcs.ref.name: e2e/needs-grows-20261126011823-ng
+      cicd.pipeline.run.url: ""
   - name: postgres
     repoURL: https://github.com/badilhq/demo-postgres.git
     branch: main
