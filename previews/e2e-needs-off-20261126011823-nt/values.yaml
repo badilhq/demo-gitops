@@ -1,0 +1,30 @@
+apiVersion: badil.dev/v1beta1
+gitopsRepoURL: https://github.com/badilhq/demo-gitops.git
+services:
+  - name: backend-1
+    repoURL: https://github.com/badilhq/demo-backend-1.git
+    branch: main
+    commitSha: c10491da54af3d7be4ffbbfedf1d29e78ca18bbd
+    imageTag: c10491da54af3d7be4ffbbfedf1d29e78ca18bbd
+    chart:
+      path: k8s/
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+    host: backend-1-e2e-needs-off-20261126011823-nt.127.0.0.1.nip.io
+    metadata:
+      pr-author: amine7536
+      pr-url: https://github.com/badilhq/demo-backend-1/pull/116
+      pr-number: "116"
+      created-at: "2026-11-26T01:26:28Z"
+      updated-at: "2026-11-26T01:26:28Z"
+      vcs.ref.name: e2e/needs-off-20261126011823-nt
+      cicd.pipeline.run.url: ""
+  - name: postgres
+    repoURL: https://github.com/badilhq/demo-postgres.git
+    branch: main
+    imageTag: ${ARGOCD_APP_REVISION}
+    chart:
+      path: k8s/
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+dependencies: []
