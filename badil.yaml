@@ -17,6 +17,7 @@ services:
     chart:
       path: web/chart
     paths: ["web/**"]
+
 preview:
   domain: 127.0.0.1.nip.io
   tls: false
@@ -26,4 +27,3 @@ preview:
     backend-2: {}
     mono-api: {}
     mono-web: {}
-imageTag: sha-{sha7}
