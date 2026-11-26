@@ -13,12 +13,12 @@ services:
     host: backend-1-e2e-manual-skips-holder-20261126001900-x.127.0.0.1.nip.io
     metadata:
       pr-author: amine7536
-      pr-url: https://github.com/badilhq/demo-backend-1/pull/88
-      pr-number: "88"
+      pr-url: https://github.com/badilhq/demo-backend-1/pull/89
+      pr-number: "89"
       created-at: "2026-11-26T00:40:23Z"
-      updated-at: "2026-11-26T00:40:23Z"
+      updated-at: "2026-11-26T00:40:35Z"
       vcs.ref.name: e2e/manual-skips-holder-20261126001900-x
-      cicd.pipeline.run.url: ""
+      cicd.pipeline.run.url: https://example.invalid/run
   - name: backend-2
     repoURL: https://github.com/badilhq/demo-backend-2.git
     branch: main
