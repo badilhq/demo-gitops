@@ -1,0 +1,70 @@
+apiVersion: badil.dev/v1beta1
+gitopsRepoURL: https://github.com/badilhq/demo-gitops.git
+services:
+  - name: backend-1
+    repoURL: https://github.com/badilhq/demo-backend-1.git
+    branch: main
+    commitSha: 1b1e74ad26ddc961338a25ac31882c176f81398f
+    imageTag: 1b1e74ad26ddc961338a25ac31882c176f81398f
+    chart:
+      path: k8s/
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+    host: backend-1-e2e-dependency-deployed-20261126001900-dp.127.0.0.1.nip.io
+    metadata:
+      pr-author: amine7536
+      pr-url: https://github.com/badilhq/demo-backend-1/pull/78
+      pr-number: "78"
+      created-at: "2026-11-26T00:26:48Z"
+      updated-at: "2026-11-26T00:26:48Z"
+      vcs.ref.name: e2e/dependency-deployed-20261126001900-dp
+      cicd.pipeline.run.url: ""
+  - name: backend-2
+    repoURL: https://github.com/badilhq/demo-backend-2.git
+    branch: main
+    imageTag: ${ARGOCD_APP_REVISION}
+    chart:
+      path: k8s/
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+    host: backend-2-e2e-dependency-deployed-20261126001900-dp.127.0.0.1.nip.io
+  - name: front
+    repoURL: https://github.com/badilhq/demo-front.git
+    branch: main
+    imageTag: ${ARGOCD_APP_REVISION}
+    chart:
+      path: k8s/
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+    host: front-e2e-dependency-deployed-20261126001900-dp.127.0.0.1.nip.io
+  - name: postgres
+    repoURL: https://github.com/badilhq/demo-postgres.git
+    branch: main
+    imageTag: ${ARGOCD_APP_REVISION}
+    chart:
+      path: k8s/
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+  - name: mono-api
+    repoURL: https://github.com/badilhq/demo-monorepo.git
+    branch: main
+    imageTag: ${ARGOCD_APP_REVISION}
+    chart:
+      path: api/chart
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+    host: mono-api-e2e-dependency-deployed-20261126001900-dp.127.0.0.1.nip.io
+  - name: mono-web
+    repoURL: https://github.com/badilhq/demo-monorepo.git
+    branch: main
+    imageTag: ${ARGOCD_APP_REVISION}
+    chart:
+      path: web/chart
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+    host: mono-web-e2e-dependency-deployed-20261126001900-dp.127.0.0.1.nip.io
+dependencies:
+  - name: podinfo
+    chart:
+      repoURL: oci://ghcr.io/stefanprodan/charts/podinfo
+      version: 6.17.0
