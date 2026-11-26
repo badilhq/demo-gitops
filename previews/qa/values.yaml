@@ -4,8 +4,8 @@ services:
   - name: backend-1
     repoURL: https://github.com/badilhq/demo-backend-1.git
     branch: main
-    commitSha: 5ab9eb2ce38be23526d189eda053310c55ddb098
-    imageTag: 5ab9eb2ce38be23526d189eda053310c55ddb098
+    commitSha: 3b866c964ecdfe2fa43ec23302334ac9e9832540
+    imageTag: 3b866c964ecdfe2fa43ec23302334ac9e9832540
     chart:
       path: k8s/
       imageTagParam: app.image.tag
@@ -16,7 +16,7 @@ services:
       pr-url: https://github.com/badilhq/demo-backend-1/pull/140
       pr-number: "140"
       created-at: "2026-11-26T07:55:41Z"
-      updated-at: "2026-11-26T07:55:41Z"
+      updated-at: "2026-11-26T07:55:56Z"
       vcs.ref.name: e2e/webhook-clears-manual-20261126071512-wc
       cicd.pipeline.run.url: ""
   - name: backend-2
