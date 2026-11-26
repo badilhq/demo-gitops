@@ -10,24 +10,6 @@ services:
       imageTagParam: app.image.tag
       hostParam: app.ingress.host
     host: backend-1-e2e-service-removed-20261126071512-sr.127.0.0.1.nip.io
-  - name: backend-2
-    repoURL: https://github.com/badilhq/demo-backend-2.git
-    branch: main
-    commitSha: 651bd66c250cac083c48d61f867b4cd8a1d3cfa8
-    imageTag: 651bd66c250cac083c48d61f867b4cd8a1d3cfa8
-    chart:
-      path: k8s/
-      imageTagParam: app.image.tag
-      hostParam: app.ingress.host
-    host: backend-2-e2e-service-removed-20261126071512-sr.127.0.0.1.nip.io
-    metadata:
-      pr-author: amine7536
-      pr-url: https://github.com/badilhq/demo-backend-2/pull/14
-      pr-number: "14"
-      created-at: "2026-11-26T07:33:01Z"
-      updated-at: "2026-11-26T07:33:01Z"
-      vcs.ref.name: e2e/service-removed-20261126071512-sr
-      cicd.pipeline.run.url: ""
   - name: front
     repoURL: https://github.com/badilhq/demo-front.git
     branch: main
@@ -63,4 +45,22 @@ services:
       imageTagParam: app.image.tag
       hostParam: app.ingress.host
     host: mono-web-e2e-service-removed-20261126071512-sr.127.0.0.1.nip.io
+  - name: backend-2
+    repoURL: https://github.com/badilhq/demo-backend-2.git
+    branch: main
+    commitSha: 651bd66c250cac083c48d61f867b4cd8a1d3cfa8
+    imageTag: 651bd66c250cac083c48d61f867b4cd8a1d3cfa8
+    chart:
+      path: k8s/
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+    host: backend-2-e2e-service-removed-20261126071512-sr.127.0.0.1.nip.io
+    metadata:
+      pr-author: amine7536
+      pr-url: https://github.com/badilhq/demo-backend-2/pull/14
+      pr-number: "14"
+      created-at: "2026-11-26T07:33:01Z"
+      updated-at: "2026-11-26T07:33:01Z"
+      vcs.ref.name: e2e/service-removed-20261126071512-sr
+      cicd.pipeline.run.url: ""
 dependencies: []
