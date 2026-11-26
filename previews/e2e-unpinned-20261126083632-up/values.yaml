@@ -39,26 +39,17 @@ services:
   - name: mono-api
     repoURL: https://github.com/badilhq/demo-monorepo.git
     branch: main
-    commitSha: 7ef2679d107db7ea8fa090e72ad883926cc125a2
-    imageTag: 7ef2679d107db7ea8fa090e72ad883926cc125a2
+    imageTag: ${ARGOCD_APP_REVISION}
     chart:
       path: api/chart
       imageTagParam: app.image.tag
       hostParam: app.ingress.host
     host: mono-api-e2e-unpinned-20261126083632-up.127.0.0.1.nip.io
-    metadata:
-      pr-author: amine7536
-      pr-url: https://github.com/badilhq/demo-monorepo/pull/50
-      pr-number: "50"
-      created-at: "2026-11-26T08:51:46Z"
-      updated-at: "2026-11-26T08:51:46Z"
-      vcs.ref.name: e2e/unpinned-20261126083632-up
-      cicd.pipeline.run.url: ""
   - name: mono-web
     repoURL: https://github.com/badilhq/demo-monorepo.git
     branch: main
-    commitSha: 7ef2679d107db7ea8fa090e72ad883926cc125a2
-    imageTag: 7ef2679d107db7ea8fa090e72ad883926cc125a2
+    commitSha: 7a5a9058a1491aec96867446c283b48757198260
+    imageTag: 7a5a9058a1491aec96867446c283b48757198260
     chart:
       path: web/chart
       imageTagParam: app.image.tag
@@ -69,7 +60,7 @@ services:
       pr-url: https://github.com/badilhq/demo-monorepo/pull/50
       pr-number: "50"
       created-at: "2026-11-26T08:51:35Z"
-      updated-at: "2026-11-26T08:51:46Z"
+      updated-at: "2026-11-26T08:55:44Z"
       vcs.ref.name: e2e/unpinned-20261126083632-up
       cicd.pipeline.run.url: ""
 dependencies: []
