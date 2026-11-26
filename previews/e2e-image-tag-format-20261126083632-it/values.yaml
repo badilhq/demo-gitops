@@ -1,0 +1,66 @@
+apiVersion: badil.dev/v1beta1
+gitopsRepoURL: https://github.com/badilhq/demo-gitops.git
+services:
+  - name: backend-1
+    repoURL: https://github.com/badilhq/demo-backend-1.git
+    branch: main
+    commitSha: cd7d17a578198325cc5c88c23e68f917a6fc114e
+    imageTag: sha-cd7d17a
+    chart:
+      path: k8s/
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+    host: backend-1-e2e-image-tag-format-20261126083632-it.127.0.0.1.nip.io
+    metadata:
+      pr-author: amine7536
+      pr-url: https://github.com/badilhq/demo-backend-1/pull/181
+      pr-number: "181"
+      created-at: "2026-11-26T09:30:07Z"
+      updated-at: "2026-11-26T09:30:07Z"
+      vcs.ref.name: e2e/image-tag-format-20261126083632-it
+      cicd.pipeline.run.url: ""
+  - name: backend-2
+    repoURL: https://github.com/badilhq/demo-backend-2.git
+    branch: main
+    imageTag: sha-${ARGOCD_APP_REVISION_SHORT}
+    chart:
+      path: k8s/
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+    host: backend-2-e2e-image-tag-format-20261126083632-it.127.0.0.1.nip.io
+  - name: front
+    repoURL: https://github.com/badilhq/demo-front.git
+    branch: main
+    imageTag: sha-${ARGOCD_APP_REVISION_SHORT}
+    chart:
+      path: k8s/
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+    host: front-e2e-image-tag-format-20261126083632-it.127.0.0.1.nip.io
+  - name: postgres
+    repoURL: https://github.com/badilhq/demo-postgres.git
+    branch: main
+    imageTag: sha-${ARGOCD_APP_REVISION_SHORT}
+    chart:
+      path: k8s/
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+  - name: mono-api
+    repoURL: https://github.com/badilhq/demo-monorepo.git
+    branch: main
+    imageTag: sha-${ARGOCD_APP_REVISION_SHORT}
+    chart:
+      path: api/chart
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+    host: mono-api-e2e-image-tag-format-20261126083632-it.127.0.0.1.nip.io
+  - name: mono-web
+    repoURL: https://github.com/badilhq/demo-monorepo.git
+    branch: main
+    imageTag: sha-${ARGOCD_APP_REVISION_SHORT}
+    chart:
+      path: web/chart
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+    host: mono-web-e2e-image-tag-format-20261126083632-it.127.0.0.1.nip.io
+dependencies: []
