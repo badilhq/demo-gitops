@@ -57,19 +57,10 @@ services:
   - name: mono-web
     repoURL: https://github.com/badilhq/demo-monorepo.git
     branch: main
-    commitSha: 690ea0979aa7f473a3c0a4fcb428cb19d38d1574
-    imageTag: 690ea0979aa7f473a3c0a4fcb428cb19d38d1574
+    imageTag: ${ARGOCD_APP_REVISION}
     chart:
       path: web/chart
       imageTagParam: app.image.tag
       hostParam: app.ingress.host
     host: mono-web-e2e-mono.127.0.0.1.nip.io
-    metadata:
-      pr-author: amine7536
-      pr-url: https://github.com/badilhq/demo-monorepo/pull/59
-      pr-number: "59"
-      created-at: "2026-11-28T12:26:51Z"
-      updated-at: "2026-11-28T12:26:51Z"
-      vcs.ref.name: e2e/holder-per-service-20261128101920-ha
-      cicd.pipeline.run.url: ""
 dependencies: []
