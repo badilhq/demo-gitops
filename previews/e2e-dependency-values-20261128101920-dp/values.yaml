@@ -63,10 +63,4 @@ services:
       imageTagParam: app.image.tag
       hostParam: app.ingress.host
     host: mono-web-e2e-dependency-values-20261128101920-dp.127.0.0.1.nip.io
-dependencies:
-  - name: podinfo
-    chart:
-      repoURL: oci://ghcr.io/stefanprodan/charts/podinfo
-      version: 6.17.0
-    values:
-      replicaCount: 2
+dependencies: []
