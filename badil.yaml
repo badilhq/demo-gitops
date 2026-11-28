@@ -17,13 +17,13 @@ services:
     chart:
       path: web/chart
     paths: ["web/**"]
+
 preview:
   domain: 127.0.0.1.nip.io
   tls: false
   expose:
     front: {}
-    backend-1:
-      path: /health
+    backend-1: {}
     backend-2: {}
     mono-api: {}
     mono-web: {}
