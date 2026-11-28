@@ -4,8 +4,8 @@ services:
   - name: backend-1
     repoURL: https://github.com/badilhq/demo-backend-1.git
     branch: main
-    commitSha: 69fe1fa1d68c4918dbd055140bdc84e53ae05d72
-    imageTag: 69fe1fa1d68c4918dbd055140bdc84e53ae05d72
+    commitSha: 9e98f48b52457f1cbda1731f75e1d4ce0a24aa13
+    imageTag: 9e98f48b52457f1cbda1731f75e1d4ce0a24aa13
     chart:
       path: k8s/
       imageTagParam: app.image.tag
@@ -16,7 +16,7 @@ services:
       pr-url: https://github.com/badilhq/demo-backend-1/pull/213
       pr-number: "213"
       created-at: "2026-11-28T10:39:42Z"
-      updated-at: "2026-11-28T10:39:42Z"
+      updated-at: "2026-11-28T10:40:02Z"
       vcs.ref.name: e2e/push-sync-20261128101920-ps
       cicd.pipeline.run.url: ""
   - name: backend-2
