@@ -21,7 +21,7 @@ services:
       cicd.pipeline.run.url: ""
   - name: backend-2
     repoURL: https://github.com/badilhq/demo-backend-2.git
-    branch: e2e-base
+    branch: main
     imageTag: ${ARGOCD_APP_REVISION}
     chart:
       path: k8s/
