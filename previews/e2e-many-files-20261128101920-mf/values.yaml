@@ -1,0 +1,75 @@
+apiVersion: badil.dev/v1beta1
+gitopsRepoURL: https://github.com/badilhq/demo-gitops.git
+services:
+  - name: backend-1
+    repoURL: https://github.com/badilhq/demo-backend-1.git
+    branch: main
+    imageTag: ${ARGOCD_APP_REVISION}
+    chart:
+      path: k8s/
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+    host: backend-1-e2e-many-files-20261128101920-mf.127.0.0.1.nip.io
+  - name: backend-2
+    repoURL: https://github.com/badilhq/demo-backend-2.git
+    branch: main
+    imageTag: ${ARGOCD_APP_REVISION}
+    chart:
+      path: k8s/
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+    host: backend-2-e2e-many-files-20261128101920-mf.127.0.0.1.nip.io
+  - name: front
+    repoURL: https://github.com/badilhq/demo-front.git
+    branch: main
+    imageTag: ${ARGOCD_APP_REVISION}
+    chart:
+      path: k8s/
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+    host: front-e2e-many-files-20261128101920-mf.127.0.0.1.nip.io
+  - name: postgres
+    repoURL: https://github.com/badilhq/demo-postgres.git
+    branch: main
+    imageTag: ${ARGOCD_APP_REVISION}
+    chart:
+      path: k8s/
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+  - name: mono-api
+    repoURL: https://github.com/badilhq/demo-monorepo.git
+    branch: main
+    commitSha: 9f5022fe549fdb917b84158a6c523ff234fad305
+    imageTag: 9f5022fe549fdb917b84158a6c523ff234fad305
+    chart:
+      path: api/chart
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+    host: mono-api-e2e-many-files-20261128101920-mf.127.0.0.1.nip.io
+    metadata:
+      pr-author: amine7536
+      pr-url: https://github.com/badilhq/demo-monorepo/pull/58
+      pr-number: "58"
+      created-at: "2026-11-28T12:26:27Z"
+      updated-at: "2026-11-28T12:26:27Z"
+      vcs.ref.name: e2e/many-files-20261128101920-mf
+      cicd.pipeline.run.url: ""
+  - name: mono-web
+    repoURL: https://github.com/badilhq/demo-monorepo.git
+    branch: main
+    commitSha: 9f5022fe549fdb917b84158a6c523ff234fad305
+    imageTag: 9f5022fe549fdb917b84158a6c523ff234fad305
+    chart:
+      path: web/chart
+      imageTagParam: app.image.tag
+      hostParam: app.ingress.host
+    host: mono-web-e2e-many-files-20261128101920-mf.127.0.0.1.nip.io
+    metadata:
+      pr-author: amine7536
+      pr-url: https://github.com/badilhq/demo-monorepo/pull/58
+      pr-number: "58"
+      created-at: "2026-11-28T12:26:27Z"
+      updated-at: "2026-11-28T12:26:27Z"
+      vcs.ref.name: e2e/many-files-20261128101920-mf
+      cicd.pipeline.run.url: ""
+dependencies: []
