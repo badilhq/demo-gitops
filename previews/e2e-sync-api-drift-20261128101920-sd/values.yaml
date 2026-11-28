@@ -22,7 +22,7 @@ services:
   - name: backend-2
     repoURL: https://github.com/badilhq/demo-backend-2.git
     branch: main
-    imageTag: e2e-drift
+    imageTag: ${ARGOCD_APP_REVISION}
     chart:
       path: k8s/
       imageTagParam: app.image.tag
