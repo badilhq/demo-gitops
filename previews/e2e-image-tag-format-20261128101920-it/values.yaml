@@ -5,7 +5,7 @@ services:
     repoURL: https://github.com/badilhq/demo-backend-1.git
     branch: main
     commitSha: a4a8eeb55cd1682d325e950a7a4c17fb386c83df
-    imageTag: sha-a4a8eeb
+    imageTag: a4a8eeb55cd1682d325e950a7a4c17fb386c83df
     chart:
       path: k8s/
       imageTagParam: app.image.tag
@@ -22,7 +22,7 @@ services:
   - name: backend-2
     repoURL: https://github.com/badilhq/demo-backend-2.git
     branch: main
-    imageTag: sha-${ARGOCD_APP_REVISION_SHORT}
+    imageTag: ${ARGOCD_APP_REVISION}
     chart:
       path: k8s/
       imageTagParam: app.image.tag
@@ -31,7 +31,7 @@ services:
   - name: front
     repoURL: https://github.com/badilhq/demo-front.git
     branch: main
-    imageTag: sha-${ARGOCD_APP_REVISION_SHORT}
+    imageTag: ${ARGOCD_APP_REVISION}
     chart:
       path: k8s/
       imageTagParam: app.image.tag
@@ -40,7 +40,7 @@ services:
   - name: postgres
     repoURL: https://github.com/badilhq/demo-postgres.git
     branch: main
-    imageTag: sha-${ARGOCD_APP_REVISION_SHORT}
+    imageTag: ${ARGOCD_APP_REVISION}
     chart:
       path: k8s/
       imageTagParam: app.image.tag
@@ -48,7 +48,7 @@ services:
   - name: mono-api
     repoURL: https://github.com/badilhq/demo-monorepo.git
     branch: main
-    imageTag: sha-${ARGOCD_APP_REVISION_SHORT}
+    imageTag: ${ARGOCD_APP_REVISION}
     chart:
       path: api/chart
       imageTagParam: app.image.tag
@@ -57,7 +57,7 @@ services:
   - name: mono-web
     repoURL: https://github.com/badilhq/demo-monorepo.git
     branch: main
-    imageTag: sha-${ARGOCD_APP_REVISION_SHORT}
+    imageTag: ${ARGOCD_APP_REVISION}
     chart:
       path: web/chart
       imageTagParam: app.image.tag
