@@ -16,9 +16,9 @@ services:
       pr-url: https://github.com/badilhq/demo-backend-1/pull/240
       pr-number: "240"
       created-at: "2026-11-28T11:37:15Z"
-      updated-at: "2026-11-28T11:37:24Z"
+      updated-at: "2026-11-28T11:37:26Z"
       vcs.ref.name: e2e/manual-skips-holder-20261128101920-x
-      cicd.pipeline.run.url: https://example.invalid/run
+      cicd.pipeline.run.url: ""
   - name: backend-2
     repoURL: https://github.com/badilhq/demo-backend-2.git
     branch: main
