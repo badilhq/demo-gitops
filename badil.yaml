@@ -1,8 +1,6 @@
 services:
   backend-1:
     repo: "https://github.com/badilhq/demo-backend-1.git"
-  backend-2:
-    repo: "https://github.com/badilhq/demo-backend-2.git"
   front:
     repo: "https://github.com/badilhq/demo-front.git"
   postgres:
@@ -17,7 +15,6 @@ services:
     chart:
       path: web/chart
     paths: ["web/**"]
-
 preview:
   domain: 127.0.0.1.nip.io
   tls: false
