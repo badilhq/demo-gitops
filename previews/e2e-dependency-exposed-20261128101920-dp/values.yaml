@@ -63,12 +63,4 @@ services:
       imageTagParam: app.image.tag
       hostParam: app.ingress.host
     host: mono-web-e2e-dependency-exposed-20261128101920-dp.127.0.0.1.nip.io
-dependencies:
-  - name: podinfo
-    chart:
-      repoURL: oci://ghcr.io/stefanprodan/charts/podinfo
-      version: 6.17.0
-    valueFiles:
-      - e2e/podinfo-ingress.yaml
-    hostParam: ingress.hosts[0].host
-    host: podinfo-e2e-dependency-exposed-20261128101920-dp.127.0.0.1.nip.io
+dependencies: []
