@@ -16,7 +16,7 @@ services:
       pr-url: https://github.com/badilhq/demo-backend-1/pull/312
       pr-number: "312"
       created-at: "2026-11-28T13:24:13Z"
-      updated-at: "2026-11-28T13:24:13Z"
+      updated-at: "2026-11-26T13:24:17Z"
       vcs.ref.name: e2e/ttl-expired-20261128101920-te
       cicd.pipeline.run.url: ""
   - name: backend-2
