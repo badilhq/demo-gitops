@@ -27,3 +27,10 @@ preview:
     mono-api: {}
     mono-web: {}
     podinfo: {}
+dependencies:
+  podinfo:
+    chart: oci://ghcr.io/stefanprodan/charts/podinfo
+    version: 6.17.0
+    valueFiles:
+      - e2e/podinfo-ingress.yaml
+    hostParam: ingress.hosts[0].host
